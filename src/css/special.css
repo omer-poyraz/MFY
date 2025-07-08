@@ -1,0 +1,20 @@
+.h100vh {
+    height: 100vh;
+}
+
+.cover {
+    object-fit: cover;
+}
+
+.fw200{
+    font-weight: 200;
+}
+
+.fw300{
+    font-weight: 300;
+}
+
+.fw400{
+    font-weight: 400;
+}
+

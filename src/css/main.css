@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    z-index: 9999;
+}
+
+.header.active {
+    background-color: #ffffff;
+}
+
+.header .menus ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+.header .menus>ul>li>ul {
+    display: none;
+}
+
+.header .menus>ul>li {
+    margin-right: 20px;
+    padding: 15px 10px;
+    position: relative;
+}
+
+.header.active .menus ul li a,
+.header.active .menus ul li span {
+    color: black;
+}
+
+.header.active .menus ul li svg {
+    filter: invert(1);
+}
+
+.header.active .lang-selected span {
+    color: black;
+    font-weight: 300 !important;
+}
+
+.header.active .lang-selected svg {
+    color: black;
+}
+
+.header .menus>ul>li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.header .menus>ul>li:hover>ul {
+    display: block;
+    position: absolute;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 16px;
+    top: 60px;
+    left: -50px;
+    width: 300px;
+}
+
+.header .menus>ul>li:hover>ul>li {
+    padding: 10px 20px;
+}
+
+.header .menus>ul>li:hover>ul>li>a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    margin-left: 10px;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.right .lang {
+    display: none;
+}
+
+.lang-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.lang-selected {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    color: white;
+    border: transparent;
+    border-radius: 20px;
+    padding: 4px 14px 4px 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    color: #222;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: background 0.2s;
+    outline: none;
+}
+
+.lang-selected span {
+    color: white;
+}
+
+.lang-selected svg {
+    color: white;
+    filter: invert(1);
+}
+
+.lang-selected img {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    margin-right: 4px;
+    border: 1.5px solid #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.lang-menu {
+    position: absolute;
+    top: 110%;
+    right: 0;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
+    min-width: 85px;
+    z-index: 100;
+    padding: 5px 10px;
+    animation: fadeIn 0.18s;
+}
+
+.lang-menu li {
+    list-style: none;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.header .right .menu-btn {
+    display: none;
+}
+
+.lang-menu li a {
+    display: flex;
+    align-items: center;
+    padding: 8px 18px;
+    color: #222;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 10px;
+    transition: background 0.18s, color 0.18s;
+    font-size: 15px;
+}
+
+.lang-menu li a.active {
+    background: #ff2c3a;
+    color: #fff;
+}
+
+.lang-menu li button {
+    font-size: 14px;
+}
+
+.lang-menu li img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 8px;
+    border: 1.5px solid #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.home .content {
+    position: absolute;
+    z-index: 2;
+    width: 80%;
+    text-align: center;
+}
+
+.home .content h1,
+span,
+strong {
+    color: white;
+}
+
+.home .content h1 {
+    font-size: 50px;
+    font-weight: 200;
+}
+
+.home .content span {
+    font-weight: 300;
+}
+
+.home .content .offer-btn {
+    padding: 10px 15px;
+    background-color: #242628;
+    width: 200px;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.home .scroll-down {
+    position: absolute;
+    bottom: 20px;
+    left: 100px;
+    z-index: 2;
+}
+
+.home .scroll-down svg {
+    margin-top: -3px;
+    margin-right: 6px;
+}
+
+.home .scroll-down span {
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.home .sectors {
+    padding: 100px 100px;
+}
+
+.footer {
+    background-color: rgba(14, 18, 27, 1);
+    padding: 50px 100px;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer a {
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+
+.home .rubber {
+    padding: 50px 100px;
+}
