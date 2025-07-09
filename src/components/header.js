@@ -9,8 +9,10 @@ import img3 from "../images/eraser.svg"
 import img4 from "../images/settings.svg"
 import tr from "../images/tr.svg"
 import en from "../images/en.svg"
+import { RiMenuFill } from "react-icons/ri";
 import { useState, useRef, useEffect } from "react";
 import { changeLang } from "../redux/slices/langSlice";
+import { changeMenuOpen } from "../redux/slices/menuOpenSlice";
 
 const Header = () => {
     const dispatch = useDispatch();
@@ -58,15 +60,15 @@ const Header = () => {
                             <ul>
                                 <li className="d-flex justify-content-start">
                                     <img src={img1} alt="" />
-                                    <Link to={lang === "tr" ? "/servisler/tasarım-hizmetleri" : "/services/design-services"}>{t("design_services")}</Link>
+                                    <Link to={lang === "tr" ? "/servisler/tasarim-hizmetleri" : "/services/design-services"}>{t("design_services")}</Link>
                                 </li>
                                 <li className="d-flex justify-content-start">
                                     <img src={img2} alt="" />
-                                    <Link to={lang === "tr" ? "/servisler/kalip-imalatı" : "/services/mold-manufacturing"}>{t("mold_manufacturing")}</Link>
+                                    <Link to={lang === "tr" ? "/servisler/kalip-imalati" : "/services/mold-manufacturing"}>{t("mold_manufacturing")}</Link>
                                 </li>
                                 <li className="d-flex justify-content-start">
                                     <img src={img3} alt="" />
-                                    <Link to={lang === "tr" ? "/servisler/plastik-imalatı" : "/services/plastic-manufacturing"}>{t("plastic_manufacturing")}</Link>
+                                    <Link to={lang === "tr" ? "/servisler/plastik-imalati" : "/services/plastic-manufacturing"}>{t("plastic_manufacturing")}</Link>
                                 </li>
                                 <li className="d-flex justify-content-start">
                                     <img src={img4} alt="" />
@@ -74,7 +76,6 @@ const Header = () => {
                                 </li>
                             </ul>
                         </li>
-                        <li><Link to={lang === "tr" ? "/hizmetler" : "/services"}>{t("services")}</Link></li>
                         <li><Link to={lang === "tr" ? "/blog" : "/blog"}>{t("blog")}</Link></li>
                         <li><Link to={lang === "tr" ? "/iletisim" : "/contact"}>{t("contact")}</Link></li>
                     </ul>
@@ -89,17 +90,20 @@ const Header = () => {
                         {open && (
                             <ul className="lang-menu">
                                 <li>
-                                    <button className={lang === "tr" ? "active" : ""} onClick={() => { dispatch(changeLang('tr')); setOpen(false); }} style={{background:'none',border:'none',width:'100%',textAlign:'left',padding:0}}>
+                                    <button className={lang === "tr" ? "active" : ""} onClick={() => { dispatch(changeLang('tr')); setOpen(false); }} style={{ background: 'none', border: 'none', width: '100%', textAlign: 'left', padding: 0 }}>
                                         <img src={tr} alt="" /> TR
                                     </button>
                                 </li>
                                 <li>
-                                    <button className={lang === "en" ? "active" : ""} onClick={() => { dispatch(changeLang('en')); setOpen(false); }} style={{background:'none',border:'none',width:'100%',textAlign:'left',padding:0}}>
+                                    <button className={lang === "en" ? "active" : ""} onClick={() => { dispatch(changeLang('en')); setOpen(false); }} style={{ background: 'none', border: 'none', width: '100%', textAlign: 'left', padding: 0 }}>
                                         <img src={en} alt="" /> EN
                                     </button>
                                 </li>
                             </ul>
                         )}
+                    </div>
+                    <div className="menu-btn">
+                        <RiMenuFill size={30} onClick={() => dispatch(changeMenuOpen())} />
                     </div>
                 </div>
             </div>

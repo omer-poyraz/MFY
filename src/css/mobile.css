@@ -1,5 +1,82 @@
+@media (max-width: 600px) {
+    .home .content h1 {
+        font-size: 45px;
+    }
+
+    .home .sectors {
+        padding: 50px 20px;
+    }
+
+    .home .rubber {
+        padding: 50px 20px;
+    }
+
+    .home .why-us {
+        padding: 50px 20px;
+    }
+
+    .home .main-blog {
+        padding: 50px 20px;
+    }
+
+    .home .main-blog .see-allbtn {
+        background-color: #ff2c3a;
+        color: white;
+        border-radius: 10px;
+        padding: 6px 0px;
+        border: none;
+        cursor: pointer;
+        width: 122px;
+        font-size: 14px;
+        font-weight: 300;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .home .faq {
+        padding: 50px 20px;
+    }
+
+    .home .still {
+        padding: 50px 20px;
+    }
+
+    .footer {
+        padding: 50px 10px;
+    }
+
+    .footer img {
+        height: 100px;
+    }
+
+    .contact-page h1 {
+        font-size: 40px;
+    }
+
+    .blog-page h1 {
+        font-size: 40px;
+    }
+
+    .corporate-page h1 {
+        font-size: 40px;
+    }
+
+    .services-page h1 {
+        font-size: 40px;
+    }
+}
+
 @media (max-width: 500px) {
     .header {
         padding: 10px;
+    }
+
+    .home .content h1 {
+        font-size: 35px;
+    }
+
+    .d-flex.justify-content-start.mt-4{
+        display: block!important;
     }
 }

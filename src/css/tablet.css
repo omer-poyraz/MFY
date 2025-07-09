@@ -11,6 +11,33 @@
 
     .header .right .menu-btn {
         display: block;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 1000px) {
+    .home .faq {
+        padding: 100px 50px;
+    }
+
+    .contact-page {
+        padding: 150px 20px;
+    }
+
+    .blog-page {
+        padding: 150px 20px;
+    }
+
+    .blog-detail-page .content {
+        padding: 50px 20px;
+    }
+
+    .corporate-page {
+        padding: 150px 20px;
+    }
+
+    .services-page {
+        padding: 150px 20px;
     }
 }
 
@@ -38,5 +65,11 @@
     .lang-menu li a {
         font-size: 13px;
         padding: 7px 12px;
+    }
+}
+
+@media (max-width: 700px) {
+    .home .scroll-down {
+        left: auto;
     }
 }
