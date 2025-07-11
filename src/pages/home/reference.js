@@ -6,6 +6,7 @@ import logo5 from '../../images/logo2.svg';
 import logo6 from '../../images/logo1.svg';
 import logo7 from '../../images/logo4.svg';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import { useTranslation } from 'react-i18next';
 
@@ -17,10 +18,11 @@ const HomeReference = () => {
             <span className='mt-5 text-dark'>{t("text6")}</span>
             <div className="my-3">
                 <Swiper
+                    modules={[Autoplay]}
                     spaceBetween={24}
                     slidesPerView={4}
                     loop={true}
-                    autoplay={{ delay: 3000, disableOnInteraction: false }}
+                    autoplay={{ delay: 2500, disableOnInteraction: false }}
                     style={{ maxWidth: 1100, margin: '0 auto' }}
                     breakpoints={{
                         0: { slidesPerView: 1 },

@@ -1,9 +1,21 @@
 import { useTranslation } from 'react-i18next';
-import img1 from '../../images/img1.svg'
+import '../../css/rubber.css';
+import { rubberImages } from '../../images/rubberImages'
 import { Col, Row } from 'reactstrap'
+import { useState } from 'react';
 
 const HomeRubber = () => {
     const { t } = useTranslation();
+
+    const items = [
+        { title: t("text40"), desc: t("text41") },
+        { title: t("text42"), desc: t("text43") },
+        { title: t("text44"), desc: t("text45") },
+        { title: t("text46"), desc: t("text47") },
+        { title: t("text48"), desc: t("text49") },
+        { title: t("text50"), desc: t("text51") },
+    ];
+    const [activeIdx, setActiveIdx] = useState(0);
 
     return (
         <div className='w-100 rubber'>
@@ -13,34 +25,21 @@ const HomeRubber = () => {
             <Row className='mt-5'>
                 <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6}>
                     <div>
-                        <div className="border-left border-5 border-danger pl-3 py-4">
-                            <div><strong className='text-dark'>{t("text40")}</strong></div>
-                            <div className='mt-1'><span className='text-dark'>{t("text41")}</span></div>
-                        </div>
-                        <div className="border-left border-5 border-secondary pl-3 py-4">
-                            <div><strong className='text-dark'>{t("text42")}</strong></div>
-                            <div className='mt-1'><span className='text-dark'>{t("text43")}</span></div>
-                        </div>
-                        <div className="border-left border-5 border-secondary pl-3 py-4">
-                            <div><strong className='text-dark'>{t("text44")}</strong></div>
-                            <div className='mt-1'><span className='text-dark'>{t("text45")}</span></div>
-                        </div>
-                        <div className="border-left border-5 border-secondary pl-3 py-4">
-                            <div><strong className='text-dark'>{t("text46")}</strong></div>
-                            <div className='mt-1'><span className='text-dark'>{t("text47")}</span></div>
-                        </div>
-                        <div className="border-left border-5 border-secondary pl-3 py-4">
-                            <div><strong className='text-dark'>{t("text48")}</strong></div>
-                            <div className='mt-1'><span className='text-dark'>{t("text49")}</span></div>
-                        </div>
-                        <div className="border-left border-5 border-secondary pl-3 py-4">
-                            <div><strong className='text-dark'>{t("text50")}</strong></div>
-                            <div className='mt-1'><span className='text-dark'>{t("text51")}</span></div>
-                        </div>
+                        {items.map((item, idx) => (
+                            <div
+                                key={idx}
+                                className={`border-left border-5 pl-3 py-4 rubber-item ${activeIdx === idx ? 'border-danger' : 'border-secondary'}`}
+                                style={{ cursor: 'pointer', background: activeIdx === idx ? '#f8f9fa' : 'transparent' }}
+                                onClick={() => setActiveIdx(idx)}
+                            >
+                                <div><strong className='text-dark'>{item.title}</strong></div>
+                                <div className='mt-1'><span className='text-dark'>{item.desc}</span></div>
+                            </div>
+                        ))}
                     </div>
                 </Col>
                 <Col xs={12} sm={12} md={6} lg={6} xl={6} xxl={6}>
-                    <div><img src={img1} alt='' className='w-100' /></div>
+                    <div><img src={rubberImages[activeIdx]} alt='' className='w-100' /></div>
                 </Col>
             </Row>
         </div>

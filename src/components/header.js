@@ -35,17 +35,22 @@ const Header = () => {
     }, []);
 
     useEffect(() => {
-        function onScroll() {
-            setScrolled(window.scrollY > 150);
+        // Anasayfa dışında her zaman scrolled=true
+        if (!window.location.pathname || window.location.pathname !== "/") {
+            setScrolled(true);
+        } else {
+            function onScroll() {
+                setScrolled(window.scrollY > 150);
+            }
+            window.addEventListener('scroll', onScroll);
+            return () => window.removeEventListener('scroll', onScroll);
         }
-        window.addEventListener('scroll', onScroll);
-        return () => window.removeEventListener('scroll', onScroll);
     }, []);
 
     return (
         <div className={`header${scrolled ? ' active' : ''}`}>
             <div className="logo">
-                <img src={logo} alt="" />
+                <Link to={"/"}><img src={logo} alt="" /></Link>
             </div>
             <div className="d-flex justify-content-end align-items-center">
                 <div className="menus">
